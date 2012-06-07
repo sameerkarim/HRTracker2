@@ -10,7 +10,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :remember_token
+  attr_accessible :email, :name, :password, :password_confirmation #, :remember_token #needed to add remember_token here because of a heroku issue
   has_secure_password  
   
   before_save { |user| user.email = email.downcase }
